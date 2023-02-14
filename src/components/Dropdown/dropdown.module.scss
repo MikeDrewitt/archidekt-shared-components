@@ -1,0 +1,38 @@
+.trigger {
+  position: relative;
+  outline: none;
+}
+
+.trigger:focus-within {
+  .open {
+    display: flex;
+  }
+}
+
+.dropdownItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdownContent {
+  display: flex;
+}
+
+.keybind {
+  opacity: 0.5;
+  padding-right: 10px;
+}
+
+.overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+
+  z-index: 10;
+}

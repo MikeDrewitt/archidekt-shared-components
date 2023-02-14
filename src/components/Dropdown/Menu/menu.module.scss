@@ -1,0 +1,133 @@
+$box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+
+$color: #383838;
+$secondary-text-color: #727272;
+$table-border-color: #dbdbdb;
+$alt-background: #f0f0f0;
+$light-color2: #d4d4d5;
+
+.menu {
+  z-index: 1;
+  right: 0;
+
+  display: none;
+  flex-direction: column;
+
+  position: absolute;
+
+  min-width: 135px;
+
+  background-color: $alt-background;
+  box-shadow: $box-shadow;
+
+  border-radius: 3px;
+
+  // Style all immediate children (AKA the buttons in the menu)
+  & > * {
+    color: $color !important; // important hits anchor colors as well
+    text-decoration: none;
+
+    transition: background-color 0.1s ease;
+
+    display: block; // mostly to keep links looking like buttons
+
+    width: 100%;
+
+    // This and the left padding forces the text to be "centered" while keeping the icons aligned
+    text-align: left;
+
+    padding: 0.5rem;
+    padding-left: 15px;
+
+    &:hover {
+      background-color: $light-color2;
+    }
+  }
+
+  // Overwrites checkbox label color
+  label {
+    color: $color !important;
+  }
+}
+
+.upDirection {
+  transform: translateY(-120%);
+}
+
+.gap {
+  pointer-events: none;
+
+  display: block;
+
+  height: 7px;
+  min-height: 7px;
+
+  padding: 0;
+}
+
+.header {
+  font-weight: bold;
+  pointer-events: none;
+  padding-bottom: 0;
+}
+
+.spacer {
+  pointer-events: none;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-top: 0.1em solid $light-color2;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+}
+
+.message {
+  pointer-events: none;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.info {
+  pointer-events: none;
+  margin-left: 1rem;
+  color: $secondary-text-color !important;
+  height: 25px;
+}
+
+.highlighted {
+  background-color: $table-border-color !important;
+}
+
+.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.extraTrigger {
+  color: $color;
+  border: none;
+  background-color: transparent;
+
+  height: 100%;
+
+  padding: 0;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+    margin-right: 0.55rem;
+  }
+}
+
+.extraTriggerIsOpen {
+  background-color: $light-color2;
+}
